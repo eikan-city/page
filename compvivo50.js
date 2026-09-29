@@ -1,24 +1,16 @@
-document
-.querySelectorAll(".expand-btn")
-.forEach(button => {
+document.querySelectorAll(".expand-btn").forEach(btn => {
 
-    button.addEventListener("click", () => {
+  btn.addEventListener("click", () => {
 
-        const detail =
-            button.parentElement.nextElementSibling;
+    const content = btn.nextElementSibling;
 
-        detail.classList.toggle("open");
+    content.classList.toggle("open");
 
-        if(detail.classList.contains("open")) {
+    btn.textContent =
+      content.classList.contains("open")
+        ? "收起详情"
+        : "查看详情";
 
-            button.innerText = "收起详情";
-
-        } else {
-
-            button.innerText = "查看作品详情";
-
-        }
-
-    });
+  });
 
 });
