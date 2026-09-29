@@ -1,0 +1,184 @@
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "SimHei", "Arial", sans-serif;
+  background: #1b1b1b;
+  color: #eee;
+  min-height: 200vh;
+}
+
+header {
+  background: #111;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  color: #eee;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.hero {
+  background: url('image/banner_o.png') center/cover no-repeat;
+    height: 80vh; /* full screen */
+  padding: 120px 20px;
+  text-align: center;
+}
+.spacer {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+/* Animations */
+.reveal, .fade-section, .fly-left, .fly-right, .fly-up, .fly-down {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active, .fade-section.active,
+.fly-left.active, .fly-right.active,
+.fly-up.active, .fly-down.active {
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+.fly-left { transform: translateX(-80px); }
+.fly-right { transform: translateX(80px); }
+.fly-up { transform: translateY(80px); }
+.fly-down { transform: translateY(-80px); }
+
+.fly-away {
+  animation: flyOut 1.2s forwards;
+}
+
+@keyframes flyOut {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-60px); }
+}
+
+.parallax {
+  background-size: cover;
+  background-position: center;
+  transition: background-position 0.2s linear;
+}
+.carousel {
+  overflow: hidden;
+  max-width: 80%;
+  margin: auto;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll-left 10s linear infinite;
+}
+
+.slide {
+  flex: 0 0 auto;
+  margin: 0 10px;
+}
+
+.slide img {
+  width: 300px;
+  height: auto;
+  border: 4px solid #69D8C9FF;
+}
+
+/* Pause on hover */
+.carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-108%); }
+}
+
+.block {
+  margin-bottom: 150px;
+  padding: 80px 40px;
+  background-color: #69D8C9CC; /* Euro-American accent */
+}
+
+/* Competition Page */
+
+.competition-card {
+  background: rgba(255,255,255,0.08);
+  border-left: 4px solid #69D8C9;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 900px;
+  border-radius: 8px;
+}
+
+.competition-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.competition-header h3 {
+  margin: 0;
+}
+
+.status {
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.status.ongoing {
+  background: #2ecc71;
+}
+
+.status.planned {
+  background: #3498db;
+}
+
+.status.ended {
+  background: #7f8c8d;
+}
+
+.expand-btn {
+  margin-top: 15px;
+  background: #69D8C9;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #111;
+  font-weight: bold;
+}
+.info-btn {
+  margin-top: 15px;
+  background: #69D8C9;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #111;
+  font-weight: bold;
+}
+.expand-btn:hover {
+  opacity: 0.9;
+}
+
+.competition-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.competition-content.open {
+  max-height: 500px;
+  margin-top: 15px;
+}
