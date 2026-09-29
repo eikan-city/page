@@ -33,7 +33,9 @@ nav a {
   align-items: flex-start;
   justify-content: center;
 }
-
+.block {
+    padding: 80px 80px;
+}
 .hero h1 {
   font-size: 48px;
   margin: 0;
