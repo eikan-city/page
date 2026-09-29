@@ -11,7 +11,7 @@ header {
   background: #111;
   padding: 10px 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -25,12 +25,12 @@ nav a {
   background: url('image/banner_o.png') center/cover no-repeat;
     height: 80vh; /* full screen */
   padding: 120px 20px;
-  text-align: center;
+  text-align: flex-start;
 }
 .spacer {
   height: 600px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -123,7 +123,7 @@ nav a {
 .competition-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 
