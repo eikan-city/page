@@ -190,9 +190,9 @@ nav a {
     width: 90%;
     max-width: 1200px;
 
-  * margin: 50px auto;
+    margin: 50px auto;
 
-    backgroun*: #2a2a2a;
+    background: #2a2a2a;
 
     border-left: 4px solid #69D8C9;
 
@@ -207,11 +207,11 @@ nav a {
 
     max-height: 650px;
 
-    object-fit: cover;*}
+    object-fit: cover;}
 
 .work-info {
 
-    padding: 20px*30px;
+    padding: 20px 30px;
 }
 
 .expand-btn {
@@ -220,9 +220,9 @@ nav a {
 
     color: #111;
 
- *  border: none;
+    border: none;
 
-    padding: 10px*20px;
+    padding: 10px 20px;
 
     cursor: pointer;
 
@@ -240,7 +240,7 @@ nav a {
 
 .work-detail.open {
 
-   *max-height: 6000px;
+    max-height: 6000px;
 }
 
 .work-detail p {
@@ -250,16 +250,16 @@ nav a {
 
 .work-detail img {
 
-    width: 100%;*
+    width: 100%;
     display: block;
 
-    margin-b*ttom: 10px;
+    margin-bottom: 10px;
 }
 
 .vote-frame {
 
-    *idth: 95%;
+    width: 95%;
 
-    max-width: 1200px;*
+    max-width: 1200px;
     margin: 30px auto;
 }
