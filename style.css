@@ -201,12 +201,12 @@ nav a {
 
 .work-cover {
 
-    width: 50%;
+    width: 100%;
 
     display: block;
 
     max-height: 650px;
-
+    max-width: 1000px;
     object-fit: cover;}
 
 .work-info {
