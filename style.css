@@ -226,16 +226,16 @@ nav a {
 
     cursor: pointer;
 
-    b*rder-radius: 6px;
+    border-radius: 6px;
 }
 
-.work-detail *
+.work-detail {
 
     max-height: 0;
 
-    overflow* hidden;
+    overflow: hidden;
 
-    transition* all .4* ease;
+    transition: all .4s ease;
 }
 
 .work-detail.open {
@@ -243,12 +243,12 @@ nav a {
    *max-height: 6000px;
 }
 
-.work-detai* p {
+.work-detail p {
 
     padding: 20px 30px;
 }
 
-.*ork-detail img {
+.work-detail img {
 
     width: 100%;*
     display: block;
