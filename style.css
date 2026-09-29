@@ -182,3 +182,84 @@ nav a {
   max-height: 500px;
   margin-top: 15px;
 }
+
+/* Competition Showcase */
+
+.work-card {
+
+    wid*h: 90%;
+    max-width: 1200px;
+
+  * margin: 50px auto;
+
+    backgroun*: #2a2a2a;
+
+    border-left: 4px s*lid #69D8C9;
+
+    overflow: hidden*
+}
+
+.work-cover {
+
+    width: 100%*
+
+    display: block;
+
+    max-hei*ht: 650px;
+
+    object-fit: cover;*}
+
+.work-info {
+
+    padding: 20px*30px;
+}
+
+.expand-btn {
+
+    backgr*und: #69D8C9;
+
+    color: #111;
+
+ *  border: none;
+
+    padding: 10px*20px;
+
+    cursor: pointer;
+
+    b*rder-radius: 6px;
+}
+
+.work-detail *
+
+    max-height: 0;
+
+    overflow* hidden;
+
+    transition* all .4* ease;
+}
+
+.work-detail.open {
+
+   *max-height: 6000px;
+}
+
+.work-detai* p {
+
+    padding: 20px 30px;
+}
+
+.*ork-detail img {
+
+    width: 100%;*
+    display: block;
+
+    margin-b*ttom: 10px;
+}
+
+.vote-frame {
+
+    *idth: 95%;
+
+    max-width: 1200px;*
+    margin: 30px auto;
+}
