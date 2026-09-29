@@ -25,7 +25,7 @@ nav a {
   background: url('image/banner_o.png') center/cover no-repeat;
     height: 80vh; /* full screen */
   padding: 120px 20px;
-  text-align: flex-start;
+  text-align: left;
 }
 .spacer {
   height: 600px;
