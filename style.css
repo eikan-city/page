@@ -462,6 +462,7 @@ nav a {
 .competition-content.open {
   max-height: 500px;
   margin-top: 15px;
+    padding: 0px 0px;
 }
 
 /* Competition Showcase */
