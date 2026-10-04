@@ -1,3 +1,280 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+}
+
+/* Header */
+
+.header{
+
+    position:sticky;
+    top:0;
+
+    background:#111;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 30px;
+}
+
+.header-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+}
+
+.logo{
+
+    max-height:50px;
+}
+
+.main-nav{
+
+    display:flex;
+
+    gap:30px;
+}
+
+.main-nav a{
+
+    color:white;
+
+    text-decoration:none;
+}
+
+/* Quick Panel */
+
+.quick-panel{
+
+    position:fixed;
+
+    top:100px;
+
+    right:30px;
+
+    z-index:999;
+
+    width:180px;
+
+    background:#222;
+
+    border-left:4px solid #69D8C9;
+
+    transition:.3s;
+}
+
+.quick-panel a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px;
+}
+
+.quick-panel.hide{
+
+    opacity:0;
+
+    transform:translateX(250px);
+}
+
+/* Hero */
+
+.hero{
+
+    height:100vh;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.4)
+    ),
+    url("image/banner_o.png")
+    center/cover;
+}
+
+.hero h1{
+
+    font-size:96px;
+
+    margin:20px 0;
+}
+
+.hero-subtitle{
+
+    letter-spacing:4px;
+}
+
+.hero-buttons{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+}
+
+.hero-btn{
+
+    background:#69D8C9;
+
+    color:#111;
+
+    text-decoration:none;
+
+    padding:12px 25px;
+
+    border-radius:5px;
+}
+
+.hero-btn.secondary{
+
+    background:#5D7AC9;
+
+    color:white;
+}
+
+/* Sections */
+
+.section{
+
+    padding:80px 10%;
+
+    margin-bottom:100px;
+}
+
+.section h2{
+
+    margin-bottom:40px;
+}
+
+/* Projects */
+
+.project-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px,1fr)
+        );
+
+    gap:30px;
+}
+
+.project-card{
+
+    background:#252525;
+
+    overflow:hidden;
+}
+
+.project-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+}
+
+.project-card h3,
+.project-card p{
+
+    padding:15px 20px;
+}
+
+/* Events */
+
+.event-card{
+
+    background:#252525;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+/* Split */
+
+.split-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:80px 10%;
+}
+
+.reverse{
+
+    flex-direction:row-reverse;
+}
+
+.split-text{
+
+    flex:1;
+}
+
+.split-image{
+
+    flex:1;
+}
+
+.split-image img{
+
+    width:100%;
+}
+
+/* Accent */
+
+.accent{
+
+    background:#222;
+}
+
+/* Footer */
+
+footer{
+
+    padding:40*x;
+
+    background:#111;
+
+    text-align:center;
+}
+
 body {
   margin: 0px;
   margin: 0px;
@@ -266,4 +543,185 @@ nav a {
 
     max-width: 1200px;
     margin: 30px auto;
+}
+
+.project-story,
+.competition-story {
+
+    padding: 100px 8%;
+}
+
+.section-head {
+
+    margin-bottom: 50px;
+}
+
+.section-head h2 {
+
+    font-size: 42px;
+}
+
+.section-head p {
+
+    opacity: .7;
+}
+
+.project-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(300px,1fr));
+
+    gap: 30px;
+}
+
+.story-card {
+
+    background:#252525;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.story-card:hover {
+
+    transform:translateY(-8px);
+}
+
+.story-card img {
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+}
+
+.story-content {
+
+    padding:25px;
+}
+
+.story-tag {
+
+    color:#69D8C9;
+    font-size:12px;
+    letter-spacing:2px;
+}
+.story-tag.china {
+
+color:#FFC843;
+}
+
+/* Japan */
+
+.story-tag.japan {
+
+color:#5D7AC9;
+}
+
+/* Original */
+
+.story-tag.original {
+
+color:#69D8C9;
+}
+
+/* Europe */
+
+.story-tag.europe {
+
+ color:#69D8C9;
+}
+.story-content h3 {
+
+    margin:15px 0;
+}
+
+.story-content a {
+
+    color:#69D8C9;
+    text-decoration:none;
+}
+
+.featured-competition {
+
+    display:flex;
+
+    background:#252525;
+
+    overflow:hidden;
+}
+
+.featured-competition img {
+
+    width:50%;
+
+    object-fit:cover;
+}
+
+.competition-content {
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.about-eikan {
+
+    display:flex;
+
+    gap:60px;
+
+    padding:100px 8%;
+}
+
+.about-text {
+
+    flex:1;
+}
+
+.about-image {
+
+    flex:1;
+}
+
+.about-image img {
+
+    width:100%;
+}
+
+.community {
+
+    text-align:center;
+
+    padding:120px 40px;
+}
+
+.qq-number {
+
+    font-size:36px;
+
+    color:#69D8C9;
+}
+
+.join-button {
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 30px;
+
+    background:#69D8C9;
+
+    color:black;
+
+    text-decoration:none;
 }
