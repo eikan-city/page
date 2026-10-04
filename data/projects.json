@@ -1,0 +1,57 @@
+[
+  {
+    "tag": "TOKYO",
+    "title": "东京",
+    "description": "这也算是京",
+    "image": "image/tokyo.png",
+    "region": "japan"
+  },
+
+  {
+    "tag": "SAPPORO",
+    "title": "札幌",
+    "description": "自称北海道民",
+    "image": "image/sapporo.png",
+    "region": "japan"
+  },
+
+  {
+    "tag": "SHANGHAI",
+    "title": "上海",
+    "description": "沪爷の野望",
+    "image": "image/shanghai.png",
+    "region": "china"
+  },
+
+  {
+    "tag": "KYOTO",
+    "title": "京都",
+    "description": "这又是哪个京",
+    "image": "image/kyoto.png",
+    "region": "japan"
+  },
+
+  {
+    "tag": "ORIGINAL",
+    "title": "石叶",
+    "description": "赛博九州合为一体",
+    "image": "image/shiye.png",
+    "region": "japan"
+  },
+
+  {
+    "tag": "ORIGINAL",
+    "title": "鹤羽",
+    "description": "鹤羽还是鹤丿羽",
+    "image": "image/heyu.png",
+    "region": "japan"
+  },
+
+  {
+    "tag": "ORIGINAL",
+    "title": "圣玻利瓦尔群岛",
+    "description": "冷门大洲的救赎",
+    "image": "image/sanbolivar.png",
+    "region": "europe"
+  }
+]
