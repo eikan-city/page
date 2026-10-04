@@ -1,11 +1,3 @@
-// Server status
-fetch("https://api.mcsrvstat.us/2/mc.gnwork.cn:59903")
-  .then(r => r.json())
-  .then(data => {
-    document.getElementById("status").innerText =
-      data.online ? "‘⁄œﬂ" : "œ¬œﬂ";
-  });
-
 // Scroll animations
 function activateOnScroll() {
   const elements = document.querySelectorAll(
@@ -71,3 +63,111 @@ prev.addEventListener('click', () => {
 
 // Initialize
 updateCarousel();
+
+
+const panel =
+      document.getElementById("quickPanel");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+
+        panel.classList.add("hide");
+
+    } else {
+
+        panel.classList.remove("hide");
+
+    }
+
+});
+
+fetch("data/competitions.json")
+
+.then(res => res.json())
+
+.then(data => {
+
+    const container =
+        document.getElementById(
+            "competitionContainer"
+        );
+
+    const current =
+        data.find(
+            item => item.status === "ongoing"
+        );
+
+    container.innerHTML = `
+        <div class="section accent">
+
+            <div class="event-card">
+                <div>
+                    <span class="status ongoing">
+                        ËøõË°å‰∏≠
+                    </span>
+
+                    <h3>
+                        ${current.title}
+                    </h3>
+                </div>
+
+                <a href="${current.link}" class="info-btn">
+                    ‰ΩúÂìÅÂÖ¨Á§∫‰∏éÊäïÁ•®
+                </a>
+
+            </div>
+
+        </div>
+    `;
+
+});
+
+fetch("data/projects.json")
+
+.then(res => res.json())
+
+.then(data => {
+
+    const container =
+        document.getElementById(
+            "project-grid"
+        );
+
+    data.forEach(project => {
+
+        container.innerHTML += `
+
+            <article class="story-card">
+                <img src="${project.image}">
+
+                <div class="story-content">
+
+                    <span class="story-tag ${project.region}">
+
+                        ${project.tag}
+
+                    </span>
+
+                    <h3>
+
+                        ${project.title}
+
+                    </h3>
+
+                    <p>
+
+                        ${project.description}
+
+                    </p>
+
+
+                </div>
+
+            </article>
+
+        `;
+
+    });
+
+});
