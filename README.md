@@ -1,1 +1,1 @@
-# pages.github.io
+https://eikan-city.github.io/page/
