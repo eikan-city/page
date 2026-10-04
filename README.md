@@ -1,1 +1,1 @@
-# rikan.github.io
+# pages.github.io
