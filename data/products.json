@@ -1,58 +1,74 @@
 [
-    {
+  {
     "title": "保时捷公寓（迈阿密）",
-    "tag": "Porsche Design Tower",
+    "tag": "PORSCHE DESIGN TOWER",
     "region": "europe",
-
     "style": "modern",
     "type": "residential",
     "detail": "medium",
     "interior": "basic",
-
     "image": "image/porschedesigntower.png",
-
-    "description": "神秘公寓"
+    "description": "这是一段介绍",
+    "price": 123
   },
   {
     "title": "宾利公寓（迈阿密）",
     "tag": "BENTLEY RESIDENCE",
     "region": "europe",
-
     "style": "modern",
     "type": "residential",
     "detail": "high",
     "interior": "basic",
-
     "image": "image/bentleyresidence.png",
-
-    "description": "神秘公寓"
+    "description": "bababoy",
+    "price": 456
   },
   {
     "title": "帕加尼公寓（迈阿密）",
     "tag": "PAGANI RESIDENCE",
     "region": "europe",
-
     "style": "modern",
     "type": "residential",
     "detail": "high",
     "interior": "high",
-
     "image": "image/paganiresidence.png",
-
-    "description": "神秘公寓"
+    "description": "介绍",
+    "price": 32768
   },
-{
+  {
     "title": "市民中心（杭州）",
     "tag": "CITIZEN CENTER",
     "region": "china",
-
     "style": "modern",
     "type": "public",
     "detail": "basic",
     "interior": "basic",
-
     "image": "image/citizencenterhz.png",
-
-    "description": "市民中心"
+    "description": "这是一段介绍",
+    "price": 65536
+  },
+  {
+    "title": "核风街区",
+    "tag": "NUKPANESE TOWN",
+    "region": "original",
+    "style": "japanese",
+    "type": "residential",
+    "detail": "medium",
+    "interior": "structure",
+    "image": "img.jpg",
+    "description": "这是一段介绍",
+    "price": 114514
+  },
+  {
+    "title": "EA",
+    "tag": "EA",
+    "region": "original",
+    "style": "original",
+    "type": "office",
+    "detail": "high",
+    "interior": "high",
+    "image": "img.jpg",
+    "description": "这是一段介绍",
+    "price": 1919810
   }
 ]
