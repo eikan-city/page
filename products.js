@@ -1,15 +1,15 @@
 const estimateBase = {
-    small: 100,
-    medium: 200,
-    large: 300
+    small: 0,
+    medium: 0,
+    large: 0
 };
 
 const estimateAdditions = {
-    type: { residential: 0, office: 1, public: 2 },
-    style: { modern: 0, japanese: 8, european: 12, original: 22 },
-    detail: { basic: 0, medium: 18, high: 48 },
-    interior: { structure: 0, basic: 12, high: 36 },
-    addons: { landscape: 16, lighting: 800, schematic: 5, concept: 30 }
+    type: { residential: 0, office: 0, public: 0 },
+    style: { modern: 0, japanese: 0, european: 0, original: 0 },
+    detail: { basic: 0, medium: 0, high: 0 },
+    interior: { structure: 0, basic: 0, high: 0 },
+    addons: { landscape: 0, lighting: 0, schematic: 0, concept: 0 }
 };
 
 const labels = {
@@ -46,7 +46,7 @@ function updateEstimate() {
         + estimateAdditions.interior[config.interior]
         + checkedAddons.reduce((sum, addon) => sum + estimateAdditions.addons[addon], 0);
 
-    document.getElementById("estimatePrice").textContent = formatPrice(total);
+    document.getElementById("estimatePrice").textContent = "a077826828";
 
     const summary = [
         labels.type[config.type],
