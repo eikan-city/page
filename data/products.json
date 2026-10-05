@@ -1,4 +1,18 @@
 [
+    {
+    "title": "保时捷公寓（迈阿密）",
+    "tag": "Porsche Design Tower",
+    "region": "europe",
+
+    "style": "modern",
+    "type": "residential",
+    "detail": "medium",
+    "interior": "basic",
+
+    "image": "image/porschedesigntower.png",
+
+    "description": "神秘公寓"
+  },
   {
     "title": "宾利公寓（迈阿密）",
     "tag": "BENTLEY RESIDENCE",
@@ -8,6 +22,20 @@
     "type": "residential",
     "detail": "high",
     "interior": "basic",
+
+    "image": "image/bentleyresidence.png",
+
+    "description": "神秘公寓"
+  },
+  {
+    "title": "帕加尼公寓（迈阿密）",
+    "tag": "PAGANI RESIDENCE",
+    "region": "europe",
+
+    "style": "modern",
+    "type": "residential",
+    "detail": "high",
+    "interior": "high",
 
     "image": "image/bentleyresidence.png",
 
