@@ -40,5 +40,19 @@
     "image": "image/paganiresidence.png",
 
     "description": "神秘公寓"
+  },
+{
+    "title": "市民中心（杭州）",
+    "tag": "CITIZEN CENTER",
+    "region": "china",
+
+    "style": "modern",
+    "type": "public",
+    "detail": "basic",
+    "interior": "basic",
+
+    "image": "image/citizencenterhz.png",
+
+    "description": "市民中心"
   }
 ]
