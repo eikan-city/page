@@ -29,7 +29,7 @@ function renderProjects(projects){
         <article
             class="story-card ${project.region}">
 
-            <img src="${project.image}">
+            <img src="${project.image}" style={width:300px;height:100%;object-fit:cover;}>
 
             <div class="story-content">
 
