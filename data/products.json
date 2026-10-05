@@ -4,10 +4,10 @@
     "tag": "BENTLEY RESIDENCE",
     "region": "europe",
 
-    "style": "europe",
+    "style": "european",
     "type": "residential",
     "detail": "high",
-    "interior": "standard",
+    "interior": "basic",
 
     "image": "image/bentleyresidence.png",
 
