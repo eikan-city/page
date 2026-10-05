@@ -46,7 +46,7 @@ function updateEstimate() {
         + estimateAdditions.interior[config.interior]
         + checkedAddons.reduce((sum, addon) => sum + estimateAdditions.addons[addon], 0);
 
-    document.getElementById("estimatePrice").textContent = "a077826828";
+    document.getElementById("estimatePrice").textContent = formatPrice;
 
     const summary = [
         labels.type[config.type],
