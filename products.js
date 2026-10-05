@@ -66,78 +66,7 @@ function updateEstimate() {
 let allProjects = [];
 
 const fallbackProjects = [
-    {
-        title: "超级无敌公寓",
-        tag: "SUPER BIG HOUSE",
-        region: "europe",
-        style: "modern",
-        type: "residential",
-        detail: "medium",
-        interior: "basic",
-        image: "img.jpg",
-        description: "这是一段介绍",
-        price: 325
-    },
-    {
-        title: "占位",
-        tag: "NONE",
-        region: "europe",
-        style: "modern",
-        type: "residential",
-        detail: "high",
-        interior: "basic",
-        image: "img.jpg",
-        description: "bababoy",
-        price: 9999999
-    },
-    {
-        title: "占位二号",
-        tag: "NONE NUMBER 2",
-        region: "europe",
-        style: "modern",
-        type: "residential",
-        detail: "high",
-        interior: "high",
-        image: "img.jpg",
-        description: "介绍",
-        price: 32768
-    },
-    {
-        title: "市民中心",
-        tag: "CITIZEN CENTER",
-        region: "china",
-        style: "modern",
-        type: "public",
-        detail: "basic",
-        interior: "basic",
-        image: "img.jpg",
-        description: "这是一段介绍",
-        price: 65536
-    },
-    {
-        title: "核风街区",
-        tag: "JAPANESE TOWN",
-        region: "original",
-        style: "japanese",
-        type: "residential",
-        detail: "medium",
-        interior: "structure",
-        image: "img.jpg",
-        description: "这是一段介绍",
-        price: 114514
-    },
-    {
-        title: "原创未来总部",
-        tag: "EIKAN ORIGINAL",
-        region: "original",
-        style: "original",
-        type: "office",
-        detail: "high",
-        interior: "high",
-        image: "img.jpg",
-        description: "这是一段介绍",
-        price: 1919810
-    }
+    
 ];
 
 function renderProjects(projects) {
