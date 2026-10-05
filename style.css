@@ -1,3 +1,84 @@
+.filter-panel {
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:50px;
+}
+
+.filter-item {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.filter-item select {
+
+    padding:10px;
+
+    min-width:180px;
+}
+
+.project-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(320px,1fr)
+        );
+
+    gap:30px;
+}
+
+.story-card {
+
+    position:relative;
+
+    background:#222;
+
+    overflow:hidden;
+}
+
+.story-card::before {
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+}
+
+.story-card.japan::before {
+
+    background:#4c78ff;
+}
+
+.story-card.china::before {
+
+    background:#ff4d4d;
+}
+
+.story-card.original::before {
+
+    background:#69D8C9;
+}
+
+
+
 *{
     box-sizing:border-box;
 }
