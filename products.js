@@ -26,7 +26,7 @@ const labels = {
     }
 };
 
-const formatPrice = value => `¥ ${value.toLocaleString("zh-CN")}`;
+const formatPrice = value => `绿宝石 ${value.toLocaleString("zh-CN")}`;
 
 function updateEstimate() {
     const config = {
