@@ -1,15 +1,15 @@
 const estimateBase = {
-    small: 0,
-    medium: 0,
-    large: 0
+    small: 100,
+    medium: 200,
+    large: 300
 };
 
 const estimateAdditions = {
-    type: { residential: 0, office: 0, public: 0 },
-    style: { modern: 0, japanese: 0, european: 0, original: 0 },
-    detail: { basic: 0, medium: 0, high: 0 },
-    interior: { structure: 0, basic: 0, high: 0 },
-    addons: { landscape: 0, lighting: 0, schematic: 0, concept: 0 }
+    type: { residential: 0, office: 1, public: 2 },
+    style: { modern: 0, japanese: 8, european: 12, original: 22 },
+    detail: { basic: 0, medium: 18, high: 48 },
+    interior: { structure: 0, basic: 12, high: 36 },
+    addons: { landscape: 16, lighting: 800, schematic: 5, concept: 30 }
 };
 
 const labels = {
@@ -46,7 +46,7 @@ function updateEstimate() {
         + estimateAdditions.interior[config.interior]
         + checkedAddons.reduce((sum, addon) => sum + estimateAdditions.addons[addon], 0);
 
-    document.getElementById("estimatePrice").textContent = formatPrice;
+    document.getElementById("estimatePrice").textContent = formatPrice(total);
 
     const summary = [
         labels.type[config.type],
@@ -66,7 +66,78 @@ function updateEstimate() {
 let allProjects = [];
 
 const fallbackProjects = [
-    
+    {
+        title: "超级无敌公寓",
+        tag: "SUPER BIG HOUSE",
+        region: "europe",
+        style: "modern",
+        type: "residential",
+        detail: "medium",
+        interior: "basic",
+        image: "img.jpg",
+        description: "这是一段介绍",
+        price: 325
+    },
+    {
+        title: "占位",
+        tag: "NONE",
+        region: "europe",
+        style: "modern",
+        type: "residential",
+        detail: "high",
+        interior: "basic",
+        image: "img.jpg",
+        description: "bababoy",
+        price: 9999999
+    },
+    {
+        title: "占位二号",
+        tag: "NONE NUMBER 2",
+        region: "europe",
+        style: "modern",
+        type: "residential",
+        detail: "high",
+        interior: "high",
+        image: "img.jpg",
+        description: "介绍",
+        price: 32768
+    },
+    {
+        title: "市民中心",
+        tag: "CITIZEN CENTER",
+        region: "china",
+        style: "modern",
+        type: "public",
+        detail: "basic",
+        interior: "basic",
+        image: "img.jpg",
+        description: "这是一段介绍",
+        price: 65536
+    },
+    {
+        title: "核风街区",
+        tag: "JAPANESE TOWN",
+        region: "original",
+        style: "japanese",
+        type: "residential",
+        detail: "medium",
+        interior: "structure",
+        image: "img.jpg",
+        description: "这是一段介绍",
+        price: 114514
+    },
+    {
+        title: "原创未来总部",
+        tag: "EIKAN ORIGINAL",
+        region: "original",
+        style: "original",
+        type: "office",
+        detail: "high",
+        interior: "high",
+        image: "img.jpg",
+        description: "这是一段介绍",
+        price: 1919810
+    }
 ];
 
 function renderProjects(projects) {
