@@ -1,138 +1,229 @@
+const estimateBase = {
+    small: 100,
+    medium: 200,
+    large: 300
+};
+
+const estimateAdditions = {
+    type: { residential: 0, office: 1, public: 2 },
+    style: { modern: 0, japanese: 8, european: 12, original: 22 },
+    detail: { basic: 0, medium: 18, high: 48 },
+    interior: { structure: 0, basic: 12, high: 36 },
+    addons: { landscape: 16, lighting: 800, schematic: 5, concept: 30 }
+};
+
+const labels = {
+    type: { residential: "住宅 / 公寓", office: "办公 / 商业", public: "公共建筑" },
+    size: { small: "小型 · 单体建筑", medium: "中型 · 建筑与周边", large: "大型 · 街区 / 综合体" },
+    style: { modern: "现代简约", japanese: "日式", european: "欧式", original: "原创世界观" },
+    detail: { basic: "基础精度", medium: "进阶精度", high: "高精度" },
+    interior: { structure: "仅建筑结构", basic: "基础室内", high: "完整精装室内" },
+    addons: {
+        landscape: "景观与道路",
+        lighting: "夜景灯光方案",
+        schematic: "源文件与搭建说明",
+        concept: "专属概念设计"
+    }
+};
+
+const formatPrice = value => `¥ ${value.toLocaleString("zh-CN")}`;
+
+function updateEstimate() {
+    const config = {
+        type: document.getElementById("buildType").value,
+        size: document.getElementById("buildSize").value,
+        style: document.getElementById("buildStyle").value,
+        detail: document.getElementById("buildDetail").value,
+        interior: document.getElementById("buildInterior").value
+    };
+    const checkedAddons = [...document.querySelectorAll('input[name="addon"]:checked')]
+        .map(input => input.value);
+
+    const total = estimateBase[config.size]
+        + estimateAdditions.type[config.type]
+        + estimateAdditions.style[config.style]
+        + estimateAdditions.detail[config.detail]
+        + estimateAdditions.interior[config.interior]
+        + checkedAddons.reduce((sum, addon) => sum + estimateAdditions.addons[addon], 0);
+
+    document.getElementById("estimatePrice").textContent = formatPrice(total);
+
+    const summary = [
+        labels.type[config.type],
+        labels.size[config.size],
+        `${labels.style[config.style]} · ${labels.detail[config.detail]}`,
+        labels.interior[config.interior],
+        ...checkedAddons.map(addon => labels.addons[addon])
+    ];
+    const summaryList = document.getElementById("estimateSummary");
+    summaryList.replaceChildren(...summary.map(item => {
+        const entry = document.createElement("li");
+        entry.textContent = item;
+        return entry;
+    }));
+}
+
 let allProjects = [];
 
-fetch("data/products.json")
+const fallbackProjects = [
+    {
+        title: "超级无敌公寓",
+        tag: "SUPER BIG HOUSE",
+        region: "europe",
+        style: "modern",
+        type: "residential",
+        detail: "medium",
+        interior: "basic",
+        image: "img.jpg",
+        description: "这是一段介绍",
+        price: 325
+    },
+    {
+        title: "占位",
+        tag: "NONE",
+        region: "europe",
+        style: "modern",
+        type: "residential",
+        detail: "high",
+        interior: "basic",
+        image: "img.jpg",
+        description: "bababoy",
+        price: 9999999
+    },
+    {
+        title: "占位二号",
+        tag: "NONE NUMBER 2",
+        region: "europe",
+        style: "modern",
+        type: "residential",
+        detail: "high",
+        interior: "high",
+        image: "img.jpg",
+        description: "介绍",
+        price: 32768
+    },
+    {
+        title: "市民中心",
+        tag: "CITIZEN CENTER",
+        region: "china",
+        style: "modern",
+        type: "public",
+        detail: "basic",
+        interior: "basic",
+        image: "img.jpg",
+        description: "这是一段介绍",
+        price: 65536
+    },
+    {
+        title: "核风街区",
+        tag: "JAPANESE TOWN",
+        region: "original",
+        style: "japanese",
+        type: "residential",
+        detail: "medium",
+        interior: "structure",
+        image: "img.jpg",
+        description: "这是一段介绍",
+        price: 114514
+    },
+    {
+        title: "原创未来总部",
+        tag: "EIKAN ORIGINAL",
+        region: "original",
+        style: "original",
+        type: "office",
+        detail: "high",
+        interior: "high",
+        image: "img.jpg",
+        description: "这是一段介绍",
+        price: 1919810
+    }
+];
 
-.then(res => res.json())
+function renderProjects(projects) {
+    const grid = document.getElementById("project-grid");
+    const emptyState = document.getElementById("noExamples");
+    grid.replaceChildren(...projects.map(project => {
+        const card = document.createElement("article");
+        card.className = `example-card ${project.region || ""}`;
 
-.then(data => {
+        const image = document.createElement("img");
+        image.src = project.image || "img.jpg";
+        image.alt = `${project.title}参考效果`;
+        image.loading = "lazy";
 
-    allProjects = data;
+        const content = document.createElement("div");
+        content.className = "example-content";
 
-    renderProjects(data);
+        const tag = document.createElement("span");
+        tag.className = "example-tag";
+        tag.textContent = project.tag;
 
-});
+        const title = document.createElement("h3");
+        title.textContent = project.title;
 
+        const description = document.createElement("p");
+        description.textContent = project.description;
 
-function renderProjects(projects){
+        const footer = document.createElement("div");
+        footer.className = "example-card-footer";
+        const meta = document.createElement("span");
+        meta.textContent = `${labels.detail[project.detail] || "定制精度"} · ${labels.interior[project.interior] || "定制室内"}`;
+        const price = document.createElement("strong");
+        price.textContent = project.price ? `参考 ${formatPrice(project.price)}` : "按需估价";
 
-    const grid =
-        document.getElementById(
-            "project-grid"
-        );
-
-    grid.innerHTML = "";
-
-    projects.forEach(project => {
-
-        grid.innerHTML += `
-
-        <article
-            class="story-card ${project.region}">
-
-            <img src="${project.image}" style={width:300px;height:100%;object-fit:cover;}>
-
-            <div class="story-content">
-
-                <span
-                    class="story-tag ${project.region}">
-
-                    ${project.tag}
-
-                </span>
-
-                <h3>
-
-                    ${project.title}
-
-                </h3>
-
-                <p>
-
-                    ${project.description}
-
-                </p>
-
-                <div class="badge-row">
-
-                </div>
-
-            </div>
-
-        </article>
-
-        `;
-
-    });
-
+        footer.append(meta, price);
+        content.append(tag, title, description, footer);
+        card.append(image, content);
+        return card;
+    }));
+    emptyState.hidden = projects.length > 0;
 }
 
-
-function filterProjects(){
-
-    const style =
-        document.getElementById(
-            "styleFilter"
-        ).value;
-
-    const type =
-        document.getElementById(
-            "typeFilter"
-        ).value;
-
-    const detail =
-        document.getElementById(
-            "detailFilter"
-        ).value;
-
-    const interior =
-        document.getElementById(
-            "interiorFilter"
-        ).value;
-
-
-    const filtered =
-        allProjects.filter(project => {
-
-            if (
-                style !== "all" &&
-                project.style !== style
-            )
-                return false;
-
-            if (
-                type !== "all" &&
-                project.type !== type
-            )
-                return false;
-
-            if (
-                detail !== "all" &&
-                project.detail !== detail
-            )
-                return false;
-
-            if (
-                interior !== "all" &&
-                project.interior !== interior
-            )
-                return false;
-
-            return true;
-        });
-
-    renderProjects(filtered);
-
-}
-
-
-document
-.querySelectorAll("select,input")
-
-.forEach(el => {
-
-    el.addEventListener(
-        "change",
-        filterProjects
+function filterProjects() {
+    const filters = {
+        style: document.getElementById("styleFilter").value,
+        type: document.getElementById("typeFilter").value,
+        detail: document.getElementById("detailFilter").value,
+        interior: document.getElementById("interiorFilter").value
+    };
+    const filtered = allProjects.filter(project =>
+        Object.entries(filters).every(([key, value]) =>
+            value === "all" || project[key] === value
+        )
     );
+    renderProjects(filtered);
+}
 
-});
+document.querySelectorAll(".configurator-card select, input[name='addon']")
+    .forEach(input => input.addEventListener("change", updateEstimate));
+
+document.querySelectorAll(".example-filters select")
+    .forEach(select => select.addEventListener("change", filterProjects));
+
+updateEstimate();
+
+const productsDataUrl = new URL("data/products.json", document.currentScript.src);
+
+fetch(productsDataUrl)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`案例数据加载失败（${response.status}）`);
+        }
+        return response.json();
+    })
+    .then(projects => {
+        if (!Array.isArray(projects)) {
+            throw new Error("案例数据格式无效");
+        }
+        allProjects = projects;
+        renderProjects(allProjects);
+    })
+    .catch(error => {
+        console.error("无法加载精选案例：", error);
+        allProjects = fallbackProjects;
+        renderProjects(allProjects);
+        const caseStatus = document.getElementById("caseStatus");
+        caseStatus.textContent = "案例数据文件暂时无法访问，当前显示内置参考案例。";
+        caseStatus.hidden = false;
+    });
