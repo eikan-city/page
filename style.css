@@ -1,5 +1,6 @@
 .filter-panel {
-
+      background: rgba(255,255,255,0.08);
+      border-left: 4px solid #69D8C9;
     display:flex;
 
     gap:20px;
