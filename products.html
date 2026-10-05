@@ -85,6 +85,122 @@
         </section>
     </main>
 
+        <section class="configurator-section" id="configurator">
+            <div class="product-section-heading">
+                <div>
+                    <p class="eyebrow">02 / CONFIGURATOR</p>
+                    <h2>配置你的项目</h2>
+                </div>
+                <p>选择你想要的规格，预算将即时更新</p>
+            </div>
+
+            <div class="configurator-layout">
+                <div class="configurator-card">
+                    <div class="config-group">
+                        <div class="config-group-heading">
+                            <span class="config-number">01</span>
+                            <div><h3>项目基础</h3><p>If you want it you have to take it</p></div>
+                        </div>
+                        <div class="config-fields">
+                            <label class="config-field">
+                                <span>建筑类型</span>
+                                <select id="buildType">
+                                    <option value="residential">住宅 / 公寓</option>
+                                    <option value="office">办公 / 商业</option>
+                                    <option value="public">公共建筑</option>
+                                </select>
+                            </label>
+                            <label class="config-field">
+                                <span>项目规模</span>
+                                <select id="buildSize">
+                                    <option value="small">小型 · 单体建筑</option>
+                                    <option value="medium" selected>中型 · 建筑与周边</option>
+                                    <option value="large">大型 · 街区 / 综合体</option>
+                                </select>
+                            </label>
+                            <label class="config-field">
+                                <span>建筑风格</span>
+                                <select id="buildStyle">
+                                    <option value="modern">现代简约</option>
+                                    <option value="japanese">日式</option>
+                                    <option value="european">欧式</option>
+                                    <option value="original">原创世界观</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-group">
+                        <div class="config-group-heading">
+                            <span class="config-number">02</span>
+                            <div><h3>制作规格</h3><p>按希望的完成度选择</p></div>
+                        </div>
+                        <div class="config-fields">
+                            <label class="config-field">
+                                <span>建筑精度</span>
+                                <select id="buildDetail">
+                                    <option value="basic">基础 · 清晰结构</option>
+                                    <option value="medium" selected>进阶 · 丰富细节</option>
+                                    <option value="high">高精 · 定制表现</option>
+                                </select>
+                            </label>
+                            <label class="config-field">
+                                <span>室内设计</span>
+                                <select id="buildInterior">
+                                    <option value="structure">仅建筑结构</option>
+                                    <option value="basic" selected>基础室内</option>
+                                    <option value="high">完整精装室内</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-group config-group-last">
+                        <div class="config-group-heading">
+                            <span class="config-number">03</span>
+                            <div><h3>可选服务</h3><p>勾选你需要的交付内容</p></div>
+                        </div>
+                        <div class="addon-list">
+                            <label class="addon-option">
+                                <input type="checkbox" name="addon" value="landscape">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="addon-copy"><strong>景观与道路</strong><small>建筑周边环境、步道与绿化</small></span>
+                                <span class="addon-price">+ ¥1,145</span>
+                            </label>
+                            <label class="addon-option">
+                                <input type="checkbox" name="addon" value="lighting">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="addon-copy"><strong>夜景灯光方案</strong><small>重点立面与公共空间灯光</small></span>
+                                <span class="addon-price">+ ¥14</span>
+                            </label>
+                            <label class="addon-option">
+                                <input type="checkbox" name="addon" value="schematic">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="addon-copy"><strong>源文件与搭建说明</strong><small>交付结构文件及基础说明</small></span>
+                                <span class="addon-price">+ ¥1,919</span>
+                            </label>
+                            <label class="addon-option">
+                                <input type="checkbox" name="addon" value="concept">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="addon-copy"><strong>专属概念设计</strong><small>从需求梳理到原创外观方向</small></span>
+                                <span class="addon-price">+ ¥810</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="estimate-card" aria-live="polite">
+                    <div class="estimate-topline"><span>PROJECT ESTIMATE</span><span class="estimate-dot"></span></div>
+                    <p class="estimate-label">预估费用</p>
+                    <p class="estimate-price" id="estimatePrice">¥ 0</p>
+                    <p class="estimate-note">本系统仅供娱乐，不指向融寰都市圈实际的项目价格</p>
+                    <div class="estimate-divider"></div>
+                    <p class="estimate-summary-title">当前配置</p>
+                    <ul class="estimate-summary" id="estimateSummary"></ul>
+                </aside>
+            </div>
+        </section>
+
 
     <footer class="products-footer">
         <p>Minecraft 是 Mojang Studios 的注册商标，融寰都市圈与 Mojang Studios、网易公司没有从属、授权或合作关系。</p>
