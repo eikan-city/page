@@ -544,7 +544,7 @@ nav a {
 }
 
 .competition-content.open {
-  max-height: 500px;
+  max-height: 5000px;
   margin-top: 15px;
     padding: 0px 0px;
 }
