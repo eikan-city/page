@@ -54,18 +54,6 @@ function renderProjects(projects){
 
                 <div class="badge-row">
 
-                    <span>
-                        ${project.style}
-                    </span>
-
-                    <span>
-                        ${project.type}
-                    </span>
-
-                    <span>
-                        ${project.detail}
-                    </span>
-
                 </div>
 
             </div>
