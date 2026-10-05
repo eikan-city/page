@@ -1,0 +1,16 @@
+[
+  {
+    "title": "宾利公寓（迈阿密）",
+    "tag": "BENTLEY RESIDENCE",
+    "region": "europe",
+
+    "style": "europe",
+    "type": "residential",
+    "detail": "high",
+    "interior": "standard",
+
+    "image": "image/bentleyresidence.png",
+
+    "description": "神秘公寓"
+  }
+]
