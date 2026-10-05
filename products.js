@@ -1,15 +1,15 @@
 const estimateBase = {
-    small: 100,
-    medium: 200,
-    large: 300
+    small: 1,
+    medium: 2,
+    large: 3
 };
 
 const estimateAdditions = {
     type: { residential: 0, office: 1, public: 2 },
-    style: { modern: 0, japanese: 8, european: 12, original: 22 },
-    detail: { basic: 0, medium: 18, high: 48 },
-    interior: { structure: 0, basic: 12, high: 36 },
-    addons: { landscape: 16, lighting: 800, schematic: 5, concept: 30 }
+    style: { modern: 0, japanese: 1, european: 1, original: 2 },
+    detail: { basic: 0, medium: 1, high: 2 },
+    interior: { structure: 0, basic: 1, high: 2 },
+    addons: { landscape: 1, lighting: 2, schematic: 3, concept: 4 }
 };
 
 const labels = {
